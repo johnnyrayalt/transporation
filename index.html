@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>#TEMPLATE#</title>
+  <!-- BOOTSTRAP 4.0.0 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- CUSTOM STYLESHEET -->
+  <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  <!-- JQUERY 3.1.1 -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <!-- CUSTOM JAVASCRIPT -->
+  <script src="js/scripts.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <header class="row">
+      <h1 class="col-12">#APPNAME#</h1>
+    </header>
+
+    <div class="row">
+
+      <div class="col-3">
+        <div class="info-container">
+          <h4 class="padding-bottom">
+            About #APP#
+          </h4>
+          <p class="padding-bottom">
+            created by<br />
+
+          </p>
+          <p>
+            Submitted for review #DATE#
+          </p>
+        </div>
+      </div>
+
+      <!-- APP CONTAINER -->
+      <div class="col-9">
+        <form id="form">
+          <div class="row question-container-outer">
+            <div class="col-12 question-container-inner">
+              <h4>What do you hate:</h4>
+              <div id="questionOne">
+                <div class="questions">
+                  <label class="question-label" for="question1-answer1">Myself</label>
+                  <input value="10" class="question-input" name="question-input-one" type="checkbox" id="question1-answer1" />
+                </div>
+                <div class="questions">
+                  <label class="question-label" for="question1-answer1">Spiders</label>
+                  <input value="20" class="question-input" name="question-input-one" type="checkbox" id="question1-answer2" />
+                </div>
+                <div class="questions">
+                  <label class="question-label" for="question1-answer1">Close Talkers</label>
+                  <input value="30" class="question-input" name="question-input-one" type="checkbox" id="question1-answer3" />
+                </div>
+              </div>
+            </div>
+            <div class="col-12 question-container-inner">
+              <h4>What makes you uncomfortable:</h4>
+              <div id="questionTwo">
+                <div class="questions">
+                  <label class="question-label" for="question2-answer1">Loose Teeth</label>
+                  <input value="10" class="question-input" name="question-input-two" type="checkbox" id="question2-answer1" />
+                </div>
+                <div class="questions">
+                  <label class="question-label" for="question2-answer2">Random Rash</label>
+                  <input value="20" class="question-input" name="question-input-two" type="checkbox" id="question2-answer2"/>
+                </div>
+                <div class="questions">
+                  <label class="question-label" for="question2-answer3">Projectile Sneezer</label>
+                  <input value="30" class="question-input" name="question-input-two" type="checkbox" id="question2-answer3"/>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 question-container-inner">
+              <h4>Is your:</h4>
+              <div id="questionThree">
+                <div class="questions">
+                  <label class="question-label" for="question3-answer1">stove on?</label>
+                  <input value="10" class="question-input" name="question-input-three" type="checkbox" id="question3-answer1" />
+                </div>
+                <div class="questions">
+                  <label class="question-label" for="question3-answer2">Are you sure?</label>
+                  <input value="20" class="question-input" name="question-input-three" type="checkbox" id="question3-answer2" />
+                </div>
+                <div class="questions">
+                  <label class="question-label" for="question3-answer3">Ok, if you say so.</label>
+                  <input value="30" class="question-input" name="question-input-three" type="checkbox" id="question3-answer3"/>
+                </div>
+              </div>
+              <button type="submit">CLICK ME BITCH</button>
+            </div>
+          </form>
+
+          <div class="answer-output">
+            <p><span id="result"></span></p>
+          </div>
+
+        </div>
+      </div>
+    </body>
+    </html>
