@@ -1,66 +1,36 @@
-function StressLevel(array1, array2, array3) {
-  this.array1 = array1;
-  this.array2 = array2;
-  this.array3 = array3;
+function StressLevel(question1, question2, question3) {
+  this.question1 = question1;
+  this.question2 = question2;
+  this.question3 = question3;
 }
 
-var array1 = [];
-var array2 = [];
-var array3 = [];
+StressLevel.prototype.totalResults = function() {
+  var answer = this.question1 + this.question2 + this.question3;
+  var low = "Not much bothers you, huh";
+  var medium = "So you're just a normal person";
+  var high = "lol same";
 
-var initial = 0;
-var total = 0;
-
-function maths() {
-  for(var i in array1) {
-    var x = (initial += array1[i]);
-  }
-  for(var i in array2) {
-    var y = (initial += array2[i]);
-  }
-  for(var i in array3) {
-    var z = (initial += array3[i]);
-  }
-  total = z;
-  return total;
-}
-
-function userStressLevel(){
-  if (total === 0 || total <= 30){
-    var result1 = "1";
-    return result1;
-  } else if (total >= 31 && total <= 60) {
-    var result2 = "2";
-    return result2;
-  } else if (total >= 61) {
-    var result3 = "3";
-    return result3;
-  } else {
-    return alert('please fill it all in.')
+  if (answer <= 3) {
+    return low;
+  } else if (answer >= 4 && answer <= 6) {
+    return medium;
+  } else if (answer >= 7){
+    return high;
   }
 }
-
 
 $(document).ready(function() {
   $('#form').submit(function(event) {
     event.preventDefault();
 
-    $('input:checkbox[name=question-input-one]:checked').each(function() {
-      var answerQuestionOne = parseInt($(this).val());
-      array1.push(answerQuestionOne);
-    });
-    $('input:checkbox[name=question-input-two]:checked').each(function() {
-      var answerQuestionTwo = parseInt($(this).val());
-      array2.push(answerQuestionTwo);
-    });
-    $('input:checkbox[name=question-input-three]:checked').each(function() {
-      var answerQuestionThree = parseInt($(this).val());
-      array3.push(answerQuestionThree);
-    });
-    var newStressLevel = new StressLevel(array1, array2, array3);
+    var answerQuestionOne = $('input:checkbox[name=question-input-one]:checked').length;
+    var answerQuestionTwo = $('input:checkbox[name=question-input-two]:checked').length;
+    var answerQuestionThree = $('input:checkbox[name=question-input-three]:checked').length;
 
-    maths();
-    var showResult = userStressLevel();
-    $('#result').text(showResult);
+    var newStressLevel = new StressLevel(answerQuestionOne, answerQuestionTwo, answerQuestionThree);
+
+    var answer = newStressLevel.totalResults();
+
+    $('#result').text(answer);
   });
 });
