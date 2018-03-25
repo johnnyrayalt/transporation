@@ -7,36 +7,36 @@ function StressLevel(array1, array2, array3) {
 var array1 = [];
 var array2 = [];
 var array3 = [];
+
+var initial = 0;
 var total = 0;
 
 function maths() {
-  debugger;
-  var x = array1.forEach(function() {
-    total += array1;
-  });
-
-  var y = array2.forEach(function() {
-    total += array2;
-  });
-
-  var z = array3.forEach(function() {
-    total += array3;
-  });
-  return parseInt(total);
-
+  for(var i in array1) {
+    var x = (initial += array1[i]);
+  }
+  for(var i in array2) {
+    var y = (initial += array2[i]);
+  }
+  for(var i in array3) {
+    var z = (initial += array3[i]);
+  }
+  total = z;
+  return total;
 }
 
-function userStressLevel(total){
-  debugger;
+function userStressLevel(){
   if (total === 0 || total <= 30){
     var result1 = "1";
     return result1;
   } else if (total >= 31 && total <= 60) {
     var result2 = "2";
     return result2;
-  } else {
+  } else if (total >= 61) {
     var result3 = "3";
     return result3;
+  } else {
+    return alert('please fill it all in.')
   }
 }
 
@@ -58,11 +58,9 @@ $(document).ready(function() {
       array3.push(answerQuestionThree);
     });
     var newStressLevel = new StressLevel(array1, array2, array3);
-    console.log(array1, array2, array3);
 
     maths();
     var showResult = userStressLevel();
     $('#result').text(showResult);
-          console.log(total);
   });
 });
